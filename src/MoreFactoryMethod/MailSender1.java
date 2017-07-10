@@ -1,7 +1,7 @@
 package MoreFactoryMethod;
 
 /**
- * Created by admin on 2017/7/10.
+ * Created by admin on 2017/7/10
  */
 
 /**
