@@ -2,10 +2,10 @@
   <artifact type="exploded-war" name="Design:war exploded">
     <output-path>$PROJECT_DIR$/out/artifacts/Design_war_exploded</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="Design/web/Web" />
+      <element id="javaee-facet-resources" facet="note/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="Design" />
+          <element id="module-output" name="note" />
         </element>
       </element>
     </root>
