@@ -37,6 +37,7 @@ public V put(K key, V value) {
 </code></pre>
 - 当我们往HashMap中put元素的时候，先根据key的hashCode重新计算hash值，根据hash值得到这个元素在数组中的位置（即下标）， 如果数组该位置上已经存放有其他元素了，那么在这个位置上的元素将以链表的形式存放，新加入的放在链头，最先加入的放在链尾。如果数组该位置上没有元素，就直接将该元素放到此数组中的该位置上。
 - HashMap底层数组的长度总是 2 的 n 次方，这是HashMap在速度上的优化。
+</br></br>
 ####2.hashmap和hashtable的区别
 - 两者最主要的区别在于Hashtable是线程安全，而HashMap则非线程安全。
 - HashMap可以使用null作为key，不过建议还是尽量避免这样使用。HashMap以null作为key时，总是存储在table数组的第一个节点上。而Hashtable则不允许null作为key。
