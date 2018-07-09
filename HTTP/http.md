@@ -21,7 +21,7 @@
 ####客户端
 通过数据链路层 - >网络层 - >传输层（根据TCP协议接收响应报文并重组） - >应用层（HTTP协议对响应进行处理） - >浏览器渲染页面 - >断开连接协议四次挥手） 
 
-##四次挥手
+## 四次挥手
   
 主动方发送标志位：（ACK + FIN）+（发送序号= 200 +确认序号= 500）第一次挥手
 
@@ -33,4 +33,4 @@
     
     
  
- ![](https://github.com/yzrds/note/blob/master/HTTP/http.jpg）
+ ![](https://github.com/yzrds/note/blob/master/HTTP/http.jpg)
