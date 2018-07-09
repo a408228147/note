@@ -33,4 +33,4 @@
     
     
  
- ![](/Users/bianlifeng/Documents/code/mycode/note/HTTP/http.jpg）
+ ![](https://github.com/yzrds/note/blob/master/HTTP/http.jpg）
