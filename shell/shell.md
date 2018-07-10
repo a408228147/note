@@ -1,37 +1,5 @@
-## 一、摸底考试
-  1.题目
-   * 将附件 StringUtils.java 放到项目的资源文件夹下，然后统计该文件中：
-     
-     * 有效代码行数（不包括空行和只有注释的行）
-     
-     * 有效代码行中，每个英文字符出现的次数（忽略大小写）
-  2.git地址
-  * http://gitlab.corp.bianlifeng.com/campus2018-dev/homework/blob/team8/team8/haoqiang.zheng/exam1/src/main/java/func/count.java
 
-## 二、学习内容
-  ### 1.常用git命令
-   * git init  某个项目开始用git管理
-   * git clone 克隆项目
-   * git status 文件当前状态
-   * git add 开始跟踪文件，并处于暂存状态
-   * git commit -m "xxx" 提交到本地仓库
-   * git rm 移除文件 
-   * git rm -f 删除已经修改过的文件并且放入暂存区的
-   * git rm --cached filename 远程库中删除但保留在当前工作目录中
-   * git mv 重命名文件
-   * git commit --amend 撤销操作修改最后一次提交
-   * git fetch 抓取远程仓库中本地仓库没有的。
-   * git bush 提交到远程仓库
-   * git branch -r -1d origin/branch-name  删除远程分支
-      * push origin :branch-name
-   * git branch 查看分支
-   * git branch xxx 新建分支
-   * git checkout xx 切换分支
-   * git checkout -b xx 创建并切换分支
-   * git merge 合并分支
-   ### 2.巩固shell命令
-   
-  题目： 输入一个文件或目录，是目录就打印首层文件名，是文件就是打印文件内容，还判断了文件是否为空是否可写，可写就进行写，是否覆盖文件进行写。
+   ### 题目： 输入一个文件或目录，是目录就打印首层文件名，是文件就是打印文件内容，还判断了文件是否为空是否可写，可写就进行写，是否覆盖文件进行写。
    
    ## 代码： 
    ```
