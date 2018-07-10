@@ -16,11 +16,11 @@ $ git config --global user.email "email@example.com"
 `git config`命令的`--global`参数，表明这台机器上的所有Git仓库都会使用这个配置，也可以对某个仓库指定不同的用户名和邮箱地址。
 
 ### 创建版本库
-#### 初始化一个Git仓库
+#### 初始化一个Git本地仓库
 ```bash
 $ git init
 ```
-#### 添加文件到Git仓库
+#### 添加文件到本地仓库
 包括两步：
 ```bash
 $ git add <file>
@@ -61,7 +61,7 @@ $ git reflog
 ```bash
 $ git reset --hard HEAD^
 ```
-以上命令是返回上一个版本，在Git中，用`HEAD`表示当前版本，上一个版本就是`HEAD^`，上上一个版本是`HEAD^^`，往上100个版本写成`HEAD~100`。
+以上命令是返回上一个版本，在Git中，用`HEAD`表示当前版本，上一个版本就是`HEAD^`，上上一个版本是`HEAD^^`，往上100个版本写成`HEAD~100`。直接删除指定的commit
 ### 回退指定版本号
 ```bash
 $ git reset --hard commit_id
@@ -267,4 +267,18 @@ $ git tag -d <tagname>
 #### 删除一个远程标签
 ```bash
 $ git push origin :refs/tags/<tagname>
+```
+#### 拉取内容
+```bash
+$ git fetch
+    
+```
+#### 版本回归
+```bash
+$ git revert
+```
+此次操作之前和之后的commit和history都会保留，并且把这次撤销作为一次最新的提交。
+#### 命令行查看文件
+```bash
+$ git cat-file 
 ```
