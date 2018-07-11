@@ -3,4 +3,13 @@
     * use test
 2. 查看数据库
     * show dbs
-3. 
+3. 插入数据
+    a. db.test.insert({“name”:”aaa”})
+        * 注意：batchinsert()方式在3.2之后的版本似乎已废除
+    b. 方法二
+    ```js
+       j = { name : “mongo” };
+       t = { x : 3 }; 
+       // 把对象保存到集合 hurl 中: 
+       db.test.save(j);
+    ```
