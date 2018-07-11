@@ -4,8 +4,10 @@
 2. 查看数据库
     * show dbs
 3. 插入数据
+
     a. db.test.insert({“name”:”aaa”})
         * 注意：batchinsert()方式在3.2之后的版本似乎已废除
+    
     b. 方法二
     ```js
        j = { name : “mongo” };
