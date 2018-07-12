@@ -158,6 +158,12 @@ public V put(K key, V value) {
              timesTable.put(date.getRequestHour(), date.getRequestMin(), 1);
          }
      }
+     
+      public static void main(String[] args) throws IOException {
+             homework t = new homework();
+             String path = homework.class.getResource("/").getPath() + "access.log";//获取资源相对路径
+             t.one(path);
+         }
 }
 ```
    
