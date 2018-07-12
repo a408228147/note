@@ -2,10 +2,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-/**
- * @author youzeliang
- * on 2018/6/24
- */
+
 public class Test {
     public static List<String> compareTest1() {
         List<String> wordList = Arrays.asList("lianggzone", "spring", "summer", "autumn", "winter");
@@ -16,5 +13,6 @@ public class Test {
             }
         });
         return wordList;
+
     }
 }

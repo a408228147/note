@@ -9,7 +9,7 @@
      - 多人开发时如果充当中央仓库的Git仓库挂了，可以随时创建一个新的中央仓库然后同步就立刻恢复了中央库。
 ## Git命令
 ### Git配置
-```bash
+```
 $ git config --global user.name "Your Name"
 $ git config --global user.email "email@example.com"
 ```
