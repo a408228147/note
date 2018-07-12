@@ -42,3 +42,122 @@ public V put(K key, V value) {
 - 两者最主要的区别在于Hashtable是线程安全，而HashMap则非线程安全。
 - HashMap可以使用null作为key，不过建议还是尽量避免这样使用。HashMap以null作为key时，总是存储在table数组的第一个节点上。而Hashtable则不允许null作为key。
 - HashMap继承了AbstractMap，HashTable继承Dictionary抽象类，两者均实现Map接口。
+
+
+## 题目
+
+  #### 从access.log中统计数据
+     1. 对healthcheck.html的请求不计入统计
+     2. 输出请求总量，以及GET和POST分别的总量
+     3. 输出请求最频繁的10个接口及其次数，按次数降序
+     4. 输出每个小时有多少分钟请求数超过400次， 比如12点有30分钟每分钟超过了400次，11点有35分钟每分钟超过了400次 table
+     
+ 
+ ```java
+ public class homework {
+  Map<String, Integer> urlMap = new HashMap<>();
+     Table<String, String, Integer> timesTable = HashBasedTable.create();
+ 
+     public void one(String path) throws IOException {
+         File file = new File(path);
+         BufferedReader reader = null;
+         //匹配时间
+         Pattern date = Pattern.compile("\\d{4}:\\d{2}:\\d{2}:\\d{2}");
+         //匹配接口
+         Pattern p1 = Pattern.compile("GET (.*?) HTTP");
+         try {
+             reader = new BufferedReader(new FileReader(file));
+             String line = null;
+             List<model> list = new ArrayList<model>();
+             while ((line = reader.readLine()) != null) {
+                 model model = new model();
+                 Splitter S = Splitter.onPattern("\\d{4}:\\d{2}:\\d{2}:\\d{2}");
+                 //截取访问时间
+                 Matcher datem = date.matcher(line);
+                 if (datem.find()) {
+                     String[] d = datem.group().split(":");
+                     model.setRequestMin(d[2]);
+                     model.setRequestHour(d[1]);
+                 }
+                 //截取访问方式
+                 if (line.contains("GET")) {
+                     model.setRequestWay("GET");
+                     //截取访问路径
+                     Matcher m1 = p1.matcher(line);
+                     m1.find();
+                     String i = m1.group();
+                     String[] l = i.split(" ");
+                     if (l[1].contains("?")) {
+                         String[] temp = l[1].split("\\?");
+                         model.setRequestUrl(temp[0]);
+                     } else {
+                         model.setRequestUrl(l[1]);
+                     }
+                 } else {
+                     model.setRequestWay("POST");
+                     //截取访问路径
+                     Matcher m1 = p1.matcher(line);
+                     m1.find();
+                     String i = m1.group();
+                     String[] l = i.split(" ");
+                     model.setRequestUrl(l[1]);
+                 }
+                 list.add(model);
+             }
+ 
+             //除去healthcheck.html
+             list = list.stream().filter(t -> !t.getRequestUrl().equals("/healthcheck.html")).collect(Collectors.toList());
+             System.out.println("请求总量：" + list.stream().count());
+             System.out.println("GET总量：" + list.stream().filter(t -> t.getRequestWay().equals("GET")).count());
+             System.out.println("POST总量：" + list.stream().filter(t -> t.getRequestWay().equals("POST")).count());
+ 
+             //统计访问每个URL的次数
+             list.stream().forEach(t -> countUrl(t.getRequestUrl()));
+             Map<String, Integer> finalMap = new LinkedHashMap<>();
+             urlMap.entrySet().stream().sorted(Map.Entry.<String, Integer>comparingByValue().reversed()).forEachOrdered(e -> finalMap.put(e.getKey(), e.getValue()));
+             //输出前十的
+             finalMap.entrySet().stream().limit(10).forEach(e -> System.out.println("接口名称：" + e.getKey() + "    访问次数：   " + e.getValue()));
+ 
+             //统计每小时访问次数
+             list.stream().forEach(t -> countMin(t));
+             /**
+              * 计算每小时访问次数>400的个数
+              */
+             for (Table.Cell<String, String, Integer> cell : timesTable.cellSet()) {
+                 if (cell.getValue() > 400)
+                     System.out.println(cell.getRowKey() + "点" + cell.getColumnKey() + "分" + "访问：" + cell.getValue() + "次");
+             }
+ 
+         } catch (IOException e) {
+ 
+         } finally {
+             reader.close();
+         }
+     }
+ 
+     /**
+      * 计算相同接口的访问次数
+      */
+     public void countUrl(String url) {
+         if (urlMap.containsKey(url)) {
+             int count = urlMap.get(url);
+             urlMap.put(url, count + 1);
+         } else {
+             urlMap.put(url, 1);
+         }
+     }
+ 
+     /**
+      * 计算每分钟的访问次数
+      */
+     public void countMin(model date) {
+         if (timesTable.contains(date.getRequestHour(), date.getRequestMin())) {
+             int count = timesTable.get(date.getRequestHour(), date.getRequestMin());
+             timesTable.put(date.getRequestHour(), date.getRequestMin(), count + 1);
+         } else {
+             timesTable.put(date.getRequestHour(), date.getRequestMin(), 1);
+         }
+     }
+}
+```
+   
