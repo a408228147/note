@@ -52,27 +52,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="list.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Java/java集合/list.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="193">
+              <first_editor relative-caret-position="2281">
                 <caret line="160" column="5" selection-start-line="160" selection-start-column="5" selection-end-line="160" selection-end-column="5" />
                 <folding>
                   <element signature="e#2753#2770#0" expanded="true" />
                 </folding>
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RIB.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Java/java集合/RIB.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="210">
-                <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
               </first_editor>
               <second_editor />
             </state>
@@ -172,8 +160,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="168" />
-    <option name="y" value="44" />
+    <option name="x" value="526" />
+    <option name="y" value="42" />
     <option name="width" value="1440" />
     <option name="height" value="797" />
   </component>
@@ -308,7 +296,7 @@
       <workItem from="1531202327493" duration="3119000" />
       <workItem from="1531223058135" duration="6539000" />
       <workItem from="1531315862684" duration="1156000" />
-      <workItem from="1531318664099" duration="4612000" />
+      <workItem from="1531318664099" duration="5355000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1531126045313</created>
@@ -436,15 +424,28 @@
       <option name="project" value="LOCAL" />
       <updated>1531404702473</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="commit">
+      <created>1531406298690</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1531406298690</updated>
+    </task>
+    <task id="LOCAL-00020" summary="commit">
+      <created>1531406636440</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1531406636440</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29199000" />
+    <option name="totallyTimeSpent" value="29942000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="168" y="44" width="1440" height="797" extended-state="0" />
-    <editor active="true" />
+    <frame x="526" y="42" width="1440" height="797" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -455,9 +456,9 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3293944" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3293944" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13376252" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13376252" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -894,24 +895,24 @@
         <state relative-caret-position="-104" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Java/java集合/list.md">
+    <entry file="file://$PROJECT_DIR$/Java/java集合/RIB.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="193">
-            <caret line="160" column="5" selection-start-line="160" selection-start-column="5" selection-end-line="160" selection-end-column="5" />
-            <folding>
-              <element signature="e#2753#2770#0" expanded="true" />
-            </folding>
+          <first_editor relative-caret-position="-257">
+            <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Java/java集合/RIB.md">
+    <entry file="file://$PROJECT_DIR$/Java/java集合/list.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="210">
-            <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+          <first_editor relative-caret-position="2281">
+            <caret line="160" column="5" selection-start-line="160" selection-start-column="5" selection-end-line="160" selection-end-column="5" />
+            <folding>
+              <element signature="e#2753#2770#0" expanded="true" />
+            </folding>
           </first_editor>
           <second_editor />
         </state>
