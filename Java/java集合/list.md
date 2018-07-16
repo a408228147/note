@@ -166,4 +166,118 @@ public V put(K key, V value) {
          }
 }
 ```
+
+
+```java
+          /**
+               * @Description: 有五个学生，每个学生有三门课的成绩，
+               * 从“成绩单.txt”中读取以上数据（包括学号、姓名、三门课成绩），计算出每门课的平均成绩,
+               * 将原有的数据和计算出的平均分数存放在磁盘文件"stud"中。
+               * @Author: by haoqiang.zheng
+               * @CreateDate: 16/07/2018 12:02 PM
+               */
+     public class MainAction {
+         public static void main(String[] args) throws IOException {
+             String path = MainAction.class.getResource("/").getPath() + "成绩单.txt";//获取资源相对路径
+             String file = AvgScore.class.getResource("/").getPath() + "stud.txt";
+             System.out.println(path);
+             System.out.println(file);
+             AvgScore as = new AvgScore();
+             as.readFile(path);
+         }
+     }
+     
+// 学号,姓名,语文成绩,数学成绩,英语成绩
+// 10001,xiaoming,90,89,77
+// 10002,xiaowang,88,97,93
+// 10003,xiaoli,60,67,62
+// 10004,xiaohong,91,75,80
+// 10005,xiaozhao,62,55,45
+// 各科,平均成绩,78.2,76.6,71.4
+
+public class AvgScore {
+    /**
+     * @Description: 读取文件
+     * @Author: by haoqiang.zheng
+     * @CreateDate: 16/07/2018 1:52 PM
+     */
+    final Logger logger = Logger.getLogger(MainAction.class);
+
+    public void readFile(String path) throws IOException {
+        File file = new File(path);
+        BufferedReader reader = new BufferedReader(new FileReader(file));
+        String line;
+
+        Table<String, String, Table> infoTable = HashBasedTable.create();
+        int i = 0;
+        while ((line = reader.readLine()) != null) {
+            String[] info = line.split(",");
+            Table<String, String, String> scoreTable = HashBasedTable.create();
+            scoreTable.put(info[2], info[3], info[4]);
+            infoTable.put(info[0], info[1], scoreTable);
+        }
+        handleInfo(infoTable);
+    }
+
+    /**
+     * @Description: 解析数据求平均值
+     * @Author: by haoqiang.zheng
+     * @CreateDate: 16/07/2018 1:52 PM
+     */
+    private void handleInfo(Table infoTable) {
+        int chinese = 0;
+        int math = 0;
+        int english = 0;
+        int i = 0;
+        for (Object cell : infoTable.cellSet()) {
+            Table.Cell<String, String, Table> infocell = (Table.Cell<String, String, Table>) cell;
+            for (Object scoreinfocell : infocell.getValue().cellSet()) {
+                Table.Cell<String, String, String> scoreinfo = (Table.Cell<String, String, String>) scoreinfocell;
+                if(i!=0){
+                chinese += Integer.parseInt(scoreinfo.getColumnKey());
+                math += Integer.parseInt(scoreinfo.getRowKey());
+                english += Integer.parseInt(scoreinfo.getValue());}
+                i++;
+            }
+        }
+        Table<String, String, String> avgtable = HashBasedTable.create();
+        avgtable.put(String.valueOf(Float.valueOf((float)math /(float) 5)), String.valueOf(Float.valueOf((float)chinese /(float) 5)), String.valueOf(Float.valueOf((float)english / (float)5)));
+        infoTable.put("各科", "平均成绩", avgtable);
+        infoWrite(infoTable);
+    }
+
+    /**
+     * @Description: 输入文本
+     * @Author: by haoqiang.zheng
+     * @CreateDate: 16/07/2018 3:05 PM
+     */
+    private void infoWrite(Table infoTable) {
+        BufferedWriter out = null;
+        String file = AvgScore.class.getResource("/").getPath() + "stud.txt";
+        System.out.println(file);
+        try {
+            out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file, true)));
+            int english = 0;
+            for (Object cell : infoTable.cellSet()) {
+                Table.Cell<String, String, Table> infocell = (Table.Cell<String, String, Table>) cell;
+                for (Object scoreinfocell : infocell.getValue().cellSet()) {
+                    Table.Cell<String, String, String> scoreinfo = (Table.Cell<String, String, String>) scoreinfocell;
+                    out.write(infocell.getRowKey() + "," + infocell.getColumnKey() + "," + scoreinfo.getRowKey() + "," + scoreinfo.getColumnKey() + "," + scoreinfo.getValue());
+                }
+                out.write("\n");
+            }
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+        } finally {
+            try {
+                out.close();
+            } catch (IOException e) {
+                logger.error(e.getMessage());
+            }
+        }
+    }
+}
+
+```
+            
    
