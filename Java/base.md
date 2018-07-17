@@ -8,7 +8,7 @@
     * RuntimeException 是所有运行时异常的父类。
 3.  Error 和 Exception 有什么区别？
     * Error 表示系统级的错误，是 java 运行环境内部错误或者硬件问题，不能指望程序来处理这样的问题，除了退出运行外别无选择，它是 java 虚拟机抛出的。Exception 表示程序需要捕捉、需要处理的异常，是由与程序设计的不完善而出现的问题，程序可以处理的问题。
-4. 关于try、catch
+4. [关于try、catch代码说明](https://github.com/yzrds/note/blob/63eae1bb65516dd29d8893f74d0b918cf656170b/src/com/note/base/ExceptionTest.java)
 
 5. finally代码块一定会执行吗？
     * 只有在 try 里面通过 System.exit(0) 来退出 JVM 的情况下 finally 块中的代码才不会执行，其他 return 等情况都会调用，所以在不终止 JVM 的情况下 finally 中的代码一定会执行。
