@@ -17,18 +17,3 @@
 3. 
 
 
-## 作业
-   * 题目：http://wiki.corp.bianlifeng.com/pages/viewpage.action?pageId=59671034
-   * git：（周五下班前完成）http://gitlab.corp.bianlifeng.com/campus2018-dev/homework/tree/team8/team8/haoqiang.zheng/daydayhappy3
-## 学习内容
-   * Java Web“进化”史
-   * Spring MVC 是什么
-     * 请求处理期的各个关键节点合理分离
-     * 视图类型、渲染方式和具体控制器解耦
-     * 很好的得到Spring的支持
-   * 如何使用Spring MVC
-     * maven配置
-     * web.xml
-     * DispatcherServle  RequestMapping  Controller RequestBody
-   * Spring MVC常用的注解及使用
-   * 拦截器、请求与响应JSON格式转换处理、异常处理
