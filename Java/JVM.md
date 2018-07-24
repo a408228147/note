@@ -16,4 +16,19 @@
  * Java垃圾回收器是用来将死掉的对象(不再使用的对象)所占用的内存回收回来，再释放到Java堆空间中。
 3. 
 
+## 作业
+  ### 题目
+  * work1：http://wiki.corp.bianlifeng.com/pages/viewpage.action?pageId=59671034
+  * work2：http://wiki.corp.bianlifeng.com/pages/viewpage.action?pageId=60260752
+  ### 地址
+  * git1：http://gitlab.corp.bianlifeng.com/campus2018-dev/homework/tree/team8/team8/haoqiang.zheng/mysqlwork （40%）
+  * git2：http://gitlab.corp.bianlifeng.com/campus2018-dev/homework/tree/team8/team8/haoqiang.zheng/daydayhappy3 （40%）
+## 学习内容
+  * Mysql的发展过程；
+  * Mysql中一些常用的数据类型；
+  * Mysql中的常用操作；
+  * Mysql的体系结构、复制原理、索引结构等；
+  * Mysql优化相关的知识；
+  
+
 
