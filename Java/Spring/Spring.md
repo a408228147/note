@@ -16,13 +16,3 @@
     * Bean在实例化的过程中：Constructor > @PostConstruct >InitializingBean > init-method
     * Bean在销毁的过程中：@PreDestroy > DisposableBean > destroy-method
     
-
-## 一、作业
-  ### 前端作业
-  #### * 题目：原始js实现toDoList
-  #### * git地址：http://gitlab.corp.bianlifeng.com/campus2018-dev/homework/tree/team8/team8/haoqiang.zheng/todoListWork
-  ### 整合作业
-  #### * 题目：前后端实现天天乐
-  #### * git地址：（未完成）http://gitlab.corp.bianlifeng.com/campus2018-dev/homework/tree/team8/team8/haoqiang.zheng/daydayhappy2
-## 二、学习内容
-  ### * 构建react工程。
