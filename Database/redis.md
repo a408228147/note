@@ -63,3 +63,5 @@
     * append key “fds”
 * 获取字符串长度（不存在返回0）
     * strlen key
+* 将键 foo变为 bar
+    * set foo bar
