@@ -45,4 +45,7 @@
     * KEYS *
 * 判断keys是否存在
     * EXISTS  bar（存在返回1，否则0）
-* 
+* 删除key 
+    * DEL  bar
+* 获得键值的类型
+    * type  bar
