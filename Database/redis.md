@@ -36,4 +36,7 @@
 * 停止redis
     * redis-cli  SHUTDOWN
     * 或者kill redis的pid号
+* 通过-h和-p参数可以自定义连接redis
+    * redis-cli -h 127.0.0.1 -p 6379
+    * 不加就是默认的
     
