@@ -59,3 +59,7 @@
     * incrby bar 3
 * 减少制定的数
     * decrby key decrement 
+* 向尾部追加值
+    * append key “fds”
+* 获取字符串长度（不存在返回0）
+    * strlen key
