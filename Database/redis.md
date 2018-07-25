@@ -49,3 +49,8 @@
     * DEL  bar
 * 获得键值的类型
     * type  bar
+* 设置key
+    * set key “bar”
+* 获取
+    * get key
+    
