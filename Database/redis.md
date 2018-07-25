@@ -34,5 +34,6 @@
 * 修改默认端口
     * redis-server —port 6380
 * 停止redis
-    * 
+    * redis-cli  SHUTDOWN
+    * 或者kill redis的pid号
     
