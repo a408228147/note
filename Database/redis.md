@@ -53,4 +53,9 @@
     * set key “bar”
 * 获取
     * get key
-    
+* 当key为整数时，可以让键自增
+    * incr num
+* 增加制定的数值
+    * incrby bar 3
+* 减少制定的数
+    * decrby key decrement 
