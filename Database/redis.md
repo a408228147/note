@@ -65,3 +65,6 @@
     * strlen key
 * 将键 foo变为 bar
     * set foo bar
+* redis关闭保护模式
+    * 进入redis安装目录 vi redis.conf 注释bind 127.0.0.1这一行
+    * 启动redis 登入客户端  执行下面命令  config set protected-mode "no"
