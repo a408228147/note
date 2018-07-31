@@ -1,3 +1,16 @@
+1. Spring模块？
+    * AOP(面向切面)：采用了面向切面编程来实现很多基础但是与业务逻辑无关的功能的解耦,比如：事务管理、日志、权限验证.....
+2. 控制反转（IOC）？ //TODO 举例
+    * 控制反转就是应用本身不负责依赖对象的创建及维护，依赖对象的创建及维护是由外部容器负责的。这样控制权就由应用转移到了外部容器，控制权的转移就是所谓反转，目的是为了获得更好的扩展性和良好的可维护性。
+3. 依赖注入？
+    * 依赖注入就是指：在运行期，由外部容器动态地将依赖对象注入到另一个对象中。
+4. 
+
+
+
+# 以上已整理好，勿乱改动，以下待整理
+
+
 ### 问题一、了解下BeanFactory和FactoryBean的区别？
      * BeanFactory是个Factory，也就是 IOC 容器或对象工厂，所有的 Bean 都是由 BeanFactory( 也就是 IOC 容器 ) 来进行管理。 
      * FactoryBean是一个接口，是一个能生产或者修饰生成对象的工厂Bean(本质上也是一个bean)，可以在BeanFactory（IOC容器）中被管理，所以它并不是一个简单的Bean。当使用容器中factory bean的时候，该容器不会返回factory bean本身，而是返回其生成的对象。要想获取FactoryBean的实现类本身，得在getBean(String BeanName)中的BeanName之前加上&,写成getBean(String &BeanName)。
